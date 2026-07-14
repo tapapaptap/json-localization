@@ -1,0 +1,38 @@
+Вопросы из собеседования
+
+ ✔ Container locjson-redis-1      Started                                                                                          0.2s 
+ ✔ Container locjson-db-1         Started                                                                                          0.2s 
+ ✔ Container locjson-app-1        Started                                                                                          0.2s 
+ ✔ Container locjson-webserver-1  
+ Started 
+
+
+locjson-redis-1	Redis — кеш/брокер очередей	Используется для быстрого хранения временных данных (сессии, кеш, очереди задач)
+locjson-db-1	
+База данных — это ваш MySQL! 🎯	Здесь хранятся все постоянные данные: пользователи, проекты, документы, исполнители
+locjson-app-1	
+Основное приложение	Сама PHP/Python/Node.js программа, которая обрабатывает логику (регистрация, проекты, переводы)
+locjson-webserver-1	
+Веб-сервер (Nginx/Apache)	Отвечает за обработку HTTP-запросов, раздачу статики, проксирование на app
+
+docker compose ps --services
+time="2026-06-18T15:44:45+03:00" level=warning msg="C:\\Users\\zhenya\\Desktop\\saves\\locJSON\\docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+app
+db
+redis
+webserver
+
+у контейнеров есть имена и если мы хотим обратится к ним то указываем их 
+docker compose exec app php artisan migrate
+
+
+Эндпоинт — это конкретный URL-адрес (или путь), по которому ваше приложение принимает запросы от пользователей или других систем.
+Простыми словами: это "входная дверь" в ваш API или веб-приложение.
+
+Git команды
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/tapapaptap/locJSON.git
+git push -u origin main
